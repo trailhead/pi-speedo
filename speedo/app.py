@@ -61,7 +61,7 @@ class App:
         SDL_Init(SDL_INIT_VIDEO)
 
         self.window = SDL_CreateWindow(
-            b"SDL2 TTF test",  # window title
+            b"Pi Speedo",  # window title
             SDL_WINDOWPOS_CENTERED,  # initial x position
             SDL_WINDOWPOS_CENTERED,  # initial y position
             self.win_width,  # width, in pixels
@@ -70,6 +70,8 @@ class App:
         )
 
         self.renderer = SDL_CreateRenderer(self.window, -1, SDL_RENDERER_ACCELERATED)
+
+        SDL_SetWindowFullscreen(self.window, SDL_WINDOW_FULLSCREEN)
 
         self.pixelformat = SDL_GetWindowPixelFormat(self.window)
 
